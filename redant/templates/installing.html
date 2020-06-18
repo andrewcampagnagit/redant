@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta project="Red Ant">
+		<meta version="2.2.0">
+		<meta author="Andrew Campagna">
+		<title>Red Ant Alpha</title>
+		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+	</head>
+
+	<body>
+		<div>
+			<h4 style="margin-top: 0; padding: 15px 25px 0 10px;">OpenShift 4.x Installer</h4>
+			<ul>
+				<li><a class="active" href="/">Install Node Builder</a></li>
+				<li><a class="active" href="/sshkey">SSH Keygen</a></li>
+				<li><a class="active" href="/buildhaproxy">Load Balancers</a></li>
+				<li><a class="active" href="https://github.com/andrewcampagnagit/ocp_install_scripts">Project</a></li>
+			</ul>
+		</div>
+		<br>
+		<img src="{{url_for('static', filename='install_cube2.png')}}" style="width:90px; height:100px; padding: 15px 0 0 35px; float: left;">
+		<br>
+		<br>
+		<br>
+		<center>
+			<div style="margin: 0 200px 0 200px; background: #e0e0e0; border-radius: 5px; box-shadow: 5px 10px 40px grey;">
+				<br>
+				<h3 id="statud">Please wait several minutes while your installation node is built...</h3>
+				<p>Your terminal will tell you when the installation is complete.</p>
+				<br>
+				<br>
+				<p>Version {{ ocp_version }}</p>
+				<br>
+				<p>Project {{ project_name }}</p>
+				<br>
+				<p>Installer IP address {{ static_ip }}</p>
+				<br>
+				<p>Bootstrap endpoint {{ bootstrap_url }}</p>
+				<br>
+				<br>
+			</div>
+		</center>
+		<br>
+		<br>
+		<br>
+	</body>
+</html>

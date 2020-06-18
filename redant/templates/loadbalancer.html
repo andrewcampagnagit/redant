@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta project="Red Ant">
+		<meta version="2.2.0">
+		<meta author="Andrew Campagna">
+		<title>Red Ant Alpha</title>
+		<link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='styles/style.css') }}">
+	</head>
+
+	<body>
+		<div>
+			<h4 style="margin-top: 0; padding: 15px 25px 0 10px;">OpenShift 4.x Installer</h4>
+			<ul>
+				<li><a class="active" href="/">Install Node Builder</a></li>
+				<li><a class="active" href="/sshkey">SSH Keygen</a></li>
+				<li><a class="active" href="/buildhaproxy">Load Balancers</a></li>
+				<li><a class="active" href="https://github.com/andrewcampagnagit/ocp_install_scripts">Project</a></li>
+			</ul>
+		</div>
+		<br>
+		<img src="{{url_for('static', filename='install_cube2.png')}}" style="width:90px; height:100px; padding: 15px 0 0 35px; float: left;">
+		<br>
+		<br>
+		<br>
+		<center>
+			<form method="POST">
+				<div style="margin: 0 200px 0 200px; background: #e0e0e0; border-radius: 5px; box-shadow: 5px 10px 40px grey;">
+					<br>
+					<h3>{{ msg }}</h3>
+					<br>
+					<p>Worker IP address range</p>
+					<input type="text" placeholder="0.0.0.0" name="fromWorkerRange">
+					<input type="text" placeholder="255.255.255.255" name="toWorkerRange">
+					<br>
+					<br>
+					<br>
+					<p>Master IP address range</p>
+					<input type="text" placeholder="0.0.0.0" name="fromMasterRange">
+					<input type="text" placeholder="255.255.255.255" name="toMasterRange">
+					<br>
+					<br>
+					<br>
+					<p>Storage IP address range</p>
+					<input type="text" placeholder="0.0.0.0" name="fromStorageRange">
+					<input type="text" placeholder="255.255.255.255" name="toStorageRange">
+					<br>
+					<br>
+					<br>
+					<p">Bootstrap IP Address</p>
+					<input type="text" placeholder="0.0.0.0" name="bootstrapIP">
+					<br>
+					<br>
+					<p>Installer IP address</p>
+					<input type="text" placeholder="0.0.0.0" name="installerIP">
+					<br>
+					<br>
+					<br>
+					<input type="submit" value="Build" class="button greybtn">
+					<br>
+					<br>
+				</div>
+			</form>
+		</center>
+		<br>
+		<br>
+		<br>
+	</body>
+</html>
